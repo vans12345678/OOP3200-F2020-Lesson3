@@ -23,17 +23,14 @@ public:
 
 	//operator overloadse
 
-	CartesianPoint operator+(const CartesianPoint& point2) const
-	{
-		CartesianPoint tempPoint;
-		tempPoint.SetX(GetX() + point2.GetX());
-		tempPoint.SetX(GetY() + point2.GetY());
-		
-		return tempPoint;
-	}
+	CartesianPoint operator+(const CartesianPoint& point2) const;
 
 	double operator-(const CartesianPoint& point_to) const;
 	bool operator==(const CartesianPoint& other_point) const;
+
+	//Friend overload
+	friend std::ostream& operator << (std::ostream& out, const CartesianPoint point);
+	friend std::istream& operator >> (std::istream& in, const CartesianPoint point);
 
 	// --------------------------------------------------------------------------------
 	/* Accessors: Used to query the state of the object
@@ -72,6 +69,6 @@ public:
 
 private:
 	// private data members for the dimensions of the point
-	int myX; // x-axis (horizontal) value
-	int myY;  // y-axis (vertical) value
+	int m_x; // x-axis (horizontal) value
+	int m_y;  // y-axis (vertical) value
 };
