@@ -71,8 +71,8 @@ int main()
 
 		CartesianPoint anotherPoint;
 		cout << "\nEnter another point:";
+		
 		cin >> anotherPoint;
-
 		cout << "You entered:" << anotherPoint;
 	}
 

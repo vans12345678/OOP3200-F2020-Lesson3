@@ -21,16 +21,17 @@ public:
 	//copy constructor
 	CartesianPoint(const CartesianPoint& point2);
 
-	//operator overloadse
+	//operator overloads
 
 	CartesianPoint operator+(const CartesianPoint& point2) const;
 
 	double operator-(const CartesianPoint& point_to) const;
 	bool operator==(const CartesianPoint& other_point) const;
+	CartesianPoint operator=(const CartesianPoint& new_point);
 
 	//Friend overload
-	friend std::ostream& operator << (std::ostream& out, const CartesianPoint point);
-	friend std::istream& operator >> (std::istream& in, const CartesianPoint point);
+	friend std::ostream& operator << (std::ostream& out, const CartesianPoint& point);
+	friend std::istream& operator >> (std::istream& in, CartesianPoint& point);
 
 	// --------------------------------------------------------------------------------
 	/* Accessors: Used to query the state of the object
