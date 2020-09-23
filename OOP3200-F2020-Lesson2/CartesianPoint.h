@@ -18,9 +18,22 @@ public:
 	CartesianPoint(int x = 1, int y = 1);
 	~CartesianPoint();
 
+	//copy constructor
+	CartesianPoint(const CartesianPoint& point2);
+
 	//operator overloadse
 
+	CartesianPoint operator+(const CartesianPoint& point2) const
+	{
+		CartesianPoint tempPoint;
+		tempPoint.SetX(GetX() + point2.GetX());
+		tempPoint.SetX(GetY() + point2.GetY());
+		
+		return tempPoint;
+	}
+
 	double operator-(const CartesianPoint& point_to) const;
+	bool operator==(const CartesianPoint& other_point) const;
 
 	// --------------------------------------------------------------------------------
 	/* Accessors: Used to query the state of the object
